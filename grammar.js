@@ -91,6 +91,7 @@ module.exports = grammar({
                 "(",
                 optional(commaSeparated(seq($.identifier, $.type))),
                 optional(","),
+                optional("..."),
                 ")",
             ),
 

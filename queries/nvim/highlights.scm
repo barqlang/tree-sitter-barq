@@ -40,11 +40,7 @@
 
 "return" @keyword.return
 
-[
- "while"
- (break)
- (continue)
-] @keyword.repeat
+"while" @keyword.repeat
 
 [
  "if"
@@ -65,6 +61,8 @@
  "var"
  "type"
  "asm"
+ (break)
+ (continue)
 ] @keyword
 
 ; Operators
