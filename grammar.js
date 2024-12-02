@@ -130,14 +130,11 @@ module.exports = grammar({
         type: ($) =>
             choice(
                 $.identifier,
-                $.array_type,
                 $.struct_type,
                 $.enum_type,
+                $.array_type,
                 $.pointer_type,
             ),
-
-        array_type: ($) =>
-            seq("[*]", optional("const"), field("child_type", $.type)),
 
         struct_type: ($) =>
             seq(
@@ -167,7 +164,9 @@ module.exports = grammar({
                 "}",
             ),
 
-        pointer_type: ($) => seq("*", $.type),
+        array_type: ($) => seq("[", $.int, "]", $.type),
+
+        pointer_type: ($) => seq(choice("*", "[*]"), optional("const"), $.type),
 
         string: (_) =>
             seq('"', field("content", /[^"\\]*(?:\\.[^"\\]*)*/), '"'),
