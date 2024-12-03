@@ -40,15 +40,19 @@ module.exports = grammar({
 
         _top_level: ($) =>
             choice(
+                seq($.constant, ";"),
                 $.variable,
-                seq($.type_alias, ";"),
+                seq($.extern_variable, ";"),
                 $.function,
                 seq($.extern_function, ";"),
+                seq($.type_alias, ";"),
             ),
 
         _statement: ($) =>
             choice(
+                seq($.constant, ";"),
                 $.variable,
+                $.switch,
                 $.if,
                 $.while,
                 seq($.break, ";"),
@@ -57,14 +61,17 @@ module.exports = grammar({
                 seq($._expression, ";"),
             ),
 
+        constant: ($) => seq("const", $.identifier, "=", $._expression),
+
         variable: ($) =>
             seq(
-                optional("extern"),
-                choice("var", "const"),
+                "var",
                 $.identifier,
                 optional($.type),
                 choice(";", seq("=", $._expression, ";")),
             ),
+
+        extern_variable: ($) => seq("extern", $.identifier, $.type),
 
         type_alias: ($) => seq("type", $.identifier, "=", $.type),
 
@@ -97,15 +104,31 @@ module.exports = grammar({
 
         body: ($) => seq("{", repeat($._statement), "}"),
 
+        switch: ($) => seq("switch", "(", $._expression, ")", $.switch_cases),
+
+        switch_cases: ($) =>
+            seq(
+                "{",
+                commaSeparated(
+                    seq(
+                        choice("else", seq(commaSeparated($._expression), optional(","))),
+                        "=>",
+                        choice($.body, $._statement),
+                    ),
+                ),
+                optional(","),
+                "}",
+            ),
+
         if: ($) =>
             seq(
                 "if",
-                field("condition", $._expression),
+                $._expression,
                 $.body,
                 field("fallback", optional(seq("else", choice($.if, $.body)))),
             ),
 
-        while: ($) => seq("while", field("condition", $._expression), $.body),
+        while: ($) => seq("while", $._expression, $.body),
         break: (_) => "break",
         continue: (_) => "continue",
 
@@ -136,9 +159,10 @@ module.exports = grammar({
                 $.pointer_type,
             ),
 
-        struct_type: ($) =>
+        struct_type: ($) => seq("struct", $.struct_type_fields),
+
+        struct_type_fields: ($) =>
             seq(
-                "struct",
                 "{",
                 optional(
                     commaSeparated(seq(field("key", $.identifier), $.type)),
@@ -147,10 +171,10 @@ module.exports = grammar({
                 "}",
             ),
 
-        enum_type: ($) =>
+        enum_type: ($) => seq("enum", optional($.type), $.enum_type_fields),
+
+        enum_type_fields: ($) =>
             seq(
-                "enum",
-                optional($.type),
                 "{",
                 optional(
                     commaSeparated(
@@ -178,9 +202,10 @@ module.exports = grammar({
 
         float: (_) => token(/[0-9]\.[0-9]*/),
 
-        inline_assembly: ($) =>
+        inline_assembly: ($) => seq("asm", $.inline_assembly_body),
+
+        inline_assembly_body: ($) =>
             seq(
-                "asm",
                 "{",
                 repeat($.string),
                 optional(

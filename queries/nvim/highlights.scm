@@ -11,7 +11,7 @@
 ; Types
 
 (type (identifier) @type)
-(type (struct_type (identifier) @variable.member))
+(type (struct_type (struct_type_fields (identifier) @variable.member)))
 (type_alias (identifier) @type.definition)
 
 ; Function and Method calls
@@ -45,21 +45,24 @@
 [
  "if"
  "else"
+ "switch"
 ] @keyword.conditional
 
 [
  "struct"
  "enum"
+ "type"
 ] @keyword.type
 
-"const" @keyword.modifier
+[
+ "extern"
+ "const"
+ "var"
+] @keyword.modifier
 
 "as" @keyword.operator
 
 [
- "extern"
- "var"
- "type"
  "asm"
  (break)
  (continue)

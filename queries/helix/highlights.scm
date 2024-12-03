@@ -1,7 +1,7 @@
 ; Types
 
 (type (identifier) @type)
-(type (struct_type (identifier) @variable.other.member))
+(type (struct_type (struct_type_fields (identifier) @variable.other.member)))
 
 ; Function and Method calls
 
@@ -48,23 +48,24 @@
 [
  "if"
  "else"
+ "switch"
 ] @keyword.control.conditional
 
 "as" @keyword.operator
 
 [
- "extern"
- "var"
  "type"
+ "struct"
+ "enum"
 ] @keyword.storage.type
 
 [
+ "extern"
  "const"
+ "var"
 ] @keyword.storage.modifier
 
 [
- "struct"
- "enum"
  "asm"
 ] @keyword
 
