@@ -949,6 +949,21 @@
     }
   },
   {
+    "type": "import",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "inline_assembly",
     "named": true,
     "fields": {},
@@ -1141,11 +1156,34 @@
           "named": true
         },
         {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "module_specifier",
+          "named": true
+        },
+        {
           "type": "type_alias",
           "named": true
         },
         {
           "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "module_specifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -2096,6 +2134,10 @@
     "named": false
   },
   {
+    "type": "export",
+    "named": false
+  },
+  {
     "type": "extern",
     "named": false
   },
@@ -2116,8 +2158,16 @@
     "named": false
   },
   {
+    "type": "import",
+    "named": false
+  },
+  {
     "type": "int",
     "named": true
+  },
+  {
+    "type": "module",
+    "named": false
   },
   {
     "type": "return",

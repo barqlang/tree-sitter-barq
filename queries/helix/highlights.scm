@@ -17,6 +17,8 @@
 
 ; Variables
 
+(module_specifier (identifier) @namespace)
+
 (member key: (identifier) @variable.other.member)
 (identifier) @variable
 
@@ -41,19 +43,25 @@
 "return" @keyword.control.return
 
 [
- (break)
- (continue)
-] @keyword.control
-
-[
  "if"
  "else"
  "switch"
 ] @keyword.control.conditional
 
+[
+ "module"
+ "import"
+] @keyword.control.import
+
+[
+ (break)
+ (continue)
+] @keyword.control
+
 "as" @keyword.operator
 
 [
+ "var"
  "type"
  "struct"
  "enum"
@@ -61,8 +69,8 @@
 
 [
  "extern"
+ "export"
  "const"
- "var"
 ] @keyword.storage.modifier
 
 [

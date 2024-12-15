@@ -4,6 +4,8 @@
 (identifier) @variable
 (member key: (identifier) @variable.member)
 
+(module_specifier (identifier) @module)
+
 ; Parameters
 
 (parameters (identifier) @variable.parameter)
@@ -55,7 +57,13 @@
 ] @keyword.type
 
 [
+ "module"
+ "import"
+] @keyword.import
+
+[
  "extern"
+ "export"
  "const"
  "var"
 ] @keyword.modifier

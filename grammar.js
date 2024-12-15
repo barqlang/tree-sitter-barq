@@ -40,6 +40,8 @@ module.exports = grammar({
 
         _top_level: ($) =>
             choice(
+                seq($.module_specifier, ";"),
+                seq($.import, ";"),
                 seq($.constant, ";"),
                 $.variable,
                 seq($.extern_variable, ";"),
@@ -61,10 +63,15 @@ module.exports = grammar({
                 seq($._expression, ";"),
             ),
 
+        module_specifier: ($) => seq("module", $.identifier),
+
+        import: ($) => seq("import", $.string),
+
         constant: ($) => seq("const", $.identifier, "=", $._expression),
 
         variable: ($) =>
             seq(
+                optional("export"),
                 "var",
                 $.identifier,
                 optional($.type),
@@ -77,6 +84,7 @@ module.exports = grammar({
 
         function: ($) =>
             seq(
+                optional("export"),
                 "fn",
                 $.identifier,
                 $.parameters,
