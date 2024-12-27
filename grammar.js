@@ -42,6 +42,7 @@ module.exports = grammar({
             choice(
                 seq($.module_specifier, ";"),
                 seq($.import, ";"),
+                $.global_assembly,
                 seq($.constant, ";"),
                 $.variable,
                 seq($.extern_variable, ";"),
@@ -119,7 +120,10 @@ module.exports = grammar({
                 "{",
                 commaSeparated(
                     seq(
-                        choice("else", seq(commaSeparated($._expression), optional(","))),
+                        choice(
+                            "else",
+                            seq(commaSeparated($._expression), optional(",")),
+                        ),
                         "=>",
                         choice($.body, $._statement),
                     ),
@@ -209,6 +213,10 @@ module.exports = grammar({
         int: (_) => token(/[0-9][_a-zA-Z0-9]*/),
 
         float: (_) => token(/[0-9]\.[0-9]*/),
+
+        global_assembly: ($) => seq("asm", $.global_assembly_body),
+
+        global_assembly_body: ($) => seq("{", repeat($.string), "}"),
 
         inline_assembly: ($) => seq("asm", $.inline_assembly_body),
 

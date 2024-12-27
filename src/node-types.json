@@ -859,6 +859,36 @@
     }
   },
   {
+    "type": "global_assembly",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "global_assembly_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "global_assembly_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "if",
     "named": true,
     "fields": {
@@ -1153,6 +1183,10 @@
         },
         {
           "type": "function",
+          "named": true
+        },
+        {
+          "type": "global_assembly",
           "named": true
         },
         {
