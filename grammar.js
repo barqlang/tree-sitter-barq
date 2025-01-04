@@ -60,7 +60,7 @@ module.exports = grammar({
                 $.while,
                 seq($.break, ";"),
                 seq($.continue, ";"),
-                seq($.defer, ";"),
+                $.defer,
                 $.return,
                 seq($._expression, ";"),
             ),
