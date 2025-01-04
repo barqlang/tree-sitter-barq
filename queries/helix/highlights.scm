@@ -56,6 +56,7 @@
 [
  (break)
  (continue)
+ "defer"
 ] @keyword.control
 
 "as" @keyword.operator

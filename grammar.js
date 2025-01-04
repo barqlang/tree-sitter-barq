@@ -60,6 +60,7 @@ module.exports = grammar({
                 $.while,
                 seq($.break, ";"),
                 seq($.continue, ";"),
+                seq($.defer, ";"),
                 $.return,
                 seq($._expression, ";"),
             ),
@@ -143,6 +144,8 @@ module.exports = grammar({
         while: ($) => seq("while", $._expression, $.body),
         break: (_) => "break",
         continue: (_) => "continue",
+
+        defer: ($) => seq("defer", choice(seq($._statement, ";"), $.body)),
 
         return: ($) => seq("return", choice(seq($._expression, ";"), ";")),
 
