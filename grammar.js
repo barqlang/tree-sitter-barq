@@ -43,6 +43,7 @@ module.exports = grammar({
                 seq($.module_specifier, ";"),
                 seq($.import, ";"),
                 $.global_assembly,
+                $.public,
                 seq($.constant, ";"),
                 $.variable,
                 seq($.extern_variable, ";"),
@@ -66,6 +67,19 @@ module.exports = grammar({
             ),
 
         module_specifier: ($) => seq("module", $.identifier),
+
+        public: ($) =>
+            seq(
+                "pub",
+                choice(
+                    seq($.constant, ";"),
+                    $.variable,
+                    seq($.extern_variable, ";"),
+                    $.function,
+                    seq($.extern_function, ";"),
+                    seq($.type_alias, ";"),
+                ),
+            ),
 
         import: ($) => seq("import", $.string),
 
@@ -290,7 +304,22 @@ module.exports = grammar({
                 "assign",
                 seq(
                     field("target", $._expression),
-                    field("operator", "="),
+                    field(
+                        "operator",
+                        choice(
+                            "+=",
+                            "-=",
+                            "*=",
+                            "/=",
+                            "%=",
+                            "<<=",
+                            ">>=",
+                            "&=",
+                            "^=",
+                            "|=",
+                            "=",
+                        ),
+                    ),
                     field("value", $._expression),
                 ),
             ),
@@ -333,6 +362,8 @@ module.exports = grammar({
                     ["|", "bit_or"],
                     ["<", "comparison"],
                     [">", "comparison"],
+                    ["<=", "comparison"],
+                    [">=", "comparison"],
                     ["==", "comparison"],
                     ["!=", "comparison"],
                 ].map(([operator, precedence, associativity]) =>
