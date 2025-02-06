@@ -2,10 +2,10 @@ prefix=@PREFIX@
 libdir=@LIBDIR@
 includedir=@INCLUDEDIR@
 
-Name: tree-sitter-cerium
-Description: Cerium grammar for tree-sitter
+Name: tree-sitter-barq
+Description: Barq grammar for tree-sitter
 URL: @URL@
 Version: @VERSION@
 Requires: @REQUIRES@
-Libs: -L${libdir} @ADDITIONAL_LIBS@ -ltree-sitter-cerium
+Libs: -L${libdir} @ADDITIONAL_LIBS@ -ltree-sitter-barq
 Cflags: -I${includedir}

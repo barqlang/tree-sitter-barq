@@ -3,10 +3,10 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tree-sitter-cerium"
-description = "Cerium grammar for tree-sitter"
+name = "tree-sitter-barq"
+description = "Barq grammar for tree-sitter"
 version = "0.0.1"
-keywords = ["incremental", "parsing", "tree-sitter", "cerium"]
+keywords = ["incremental", "parsing", "tree-sitter", "barq"]
 classifiers = [
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
@@ -19,7 +19,7 @@ license.text = "MIT"
 readme = "README.md"
 
 [project.urls]
-Homepage = "https://github.com/tree-sitter/tree-sitter-cerium"
+Homepage = "https://github.com/tree-sitter/tree-sitter-barq"
 
 [project.optional-dependencies]
 core = ["tree-sitter~=0.21"]

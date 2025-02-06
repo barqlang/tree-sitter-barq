@@ -1,4 +1,4 @@
-"Cerium grammar for tree-sitter"
+"Barq grammar for tree-sitter"
 
 from ._binding import language
 

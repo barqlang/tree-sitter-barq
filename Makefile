@@ -1,6 +1,6 @@
 VERSION := 0.0.1
 
-LANGUAGE_NAME := tree-sitter-cerium
+LANGUAGE_NAME := tree-sitter-barq
 
 # repository
 SRC_DIR := src

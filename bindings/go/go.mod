@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-cerium
+module github.com/tree-sitter/tree-sitter-barq
 
 go 1.22
 

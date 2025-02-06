@@ -1,8 +1,8 @@
 {
-  "name": "tree-sitter-cerium",
+  "name": "tree-sitter-barq",
   "version": "0.0.1",
-  "description": "Cerium grammar for tree-sitter",
-  "repository": "github:tree-sitter/tree-sitter-cerium",
+  "description": "Barq grammar for tree-sitter",
+  "repository": "github:tree-sitter/tree-sitter-barq",
   "license": "MIT",
   "main": "bindings/node",
   "types": "bindings/node",
@@ -10,7 +10,7 @@
     "incremental",
     "parsing",
     "tree-sitter",
-    "cerium"
+    "barq"
   ],
   "files": [
     "grammar.js",
@@ -46,11 +46,8 @@
   },
   "tree-sitter": [
     {
-      "scope": "source.cerium",
-      "file-types": [
-        "cerm"
-      ],
-      "highlights": "queries/nvim/highlights.scm"
+      "scope": "source.barq",
+      "injection-regex": "^barq$"
     }
   ]
 }

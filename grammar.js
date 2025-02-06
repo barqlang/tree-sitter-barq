@@ -12,7 +12,7 @@ function commaSeparated(rule) {
 }
 
 module.exports = grammar({
-    name: "cerium",
+    name: "barq",
 
     extras: ($) => [$.comment, /\s/],
 

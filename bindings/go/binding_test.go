@@ -1,15 +1,15 @@
-package tree_sitter_cerium_test
+package tree_sitter_barq_test
 
 import (
 	"testing"
 
 	tree_sitter "github.com/smacker/go-tree-sitter"
-	"github.com/tree-sitter/tree-sitter-cerium"
+	"github.com/tree-sitter/tree-sitter-barq"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
-	language := tree_sitter.NewLanguage(tree_sitter_cerium.Language())
+	language := tree_sitter.NewLanguage(tree_sitter_barq.Language())
 	if language == nil {
-		t.Errorf("Error loading Cerium grammar")
+		t.Errorf("Error loading Barq grammar")
 	}
 }

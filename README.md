@@ -1,9 +1,9 @@
-# tree-sitter-cerium
+# tree-sitter-barq
 
 [![discord][discord]](https://discord.gg/w7nTvsVJhm)
 [![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
 
-Cerium grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
+Barq language grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
@@ -16,19 +16,19 @@ Cerium grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
 ```toml
 [[language]]
-name = "cerium"
-scope = "scope.cerium"
-injection-regex = "cerium"
-file-types = ["cerm"]
+name = "barq"
+scope = "scope.barq"
+injection-regex = "barq"
+file-types = ["bq"]
 comment-tokens = ["//"]
 indent = { tab-width = 4, unit = " " }
 
 [[grammar]]
-name = "cerium"
-source = { git = "https://github.com/yhyadev/tree-sitter-cerium", rev = "<PUT THE COMMIT REVISION HERE>" }
+name = "barq"
+source = { git = "https://github.com/yhyadev/tree-sitter-barq", rev = "<PUT THE COMMIT REVISION HERE>" }
 ```
 
-2 - Now, copy the queries from [queries/helix](queries/helix) to `runtime/queries/cerium` directory inside the root of local config
+2 - Now, copy the queries from [queries/helix](queries/helix) to `runtime/queries/barq` directory inside the root of local config
 
 3 - And lastly run these commands to fetch and build the parser
 
@@ -44,23 +44,23 @@ hx -g build
 ```lua
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
-parser_config.cerium = {
+parser_config.barq = {
     install_info = {
-        url = "https://github.com/yhyadev/tree-sitter-cerium",
+        url = "https://github.com/yhyadev/tree-sitter-barq",
         files = { "src/parser.c" },
         rev = "<PUT THE COMMIT REVISION HERE>",
     },
 
-    filetype = "cerm"
+    filetype = "bq"
 }
 
 vim.filetype.add({
     extension = {
-        cerm = "cerium"
+        bq = "barq"
     }
 })
 ```
 
-2 - Now, copy the queries from [queries/nvim](queries/nvim) to `queries/cerium` directory inside the root of local config
+2 - Now, copy the queries from [queries/nvim](queries/nvim) to `queries/barq` directory inside the root of local config
 
 3 - And lastly restart neovim and then run `:TSUpdate`
