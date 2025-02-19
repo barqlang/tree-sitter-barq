@@ -5,6 +5,8 @@
 
 ; Function and Method calls
 
+(call (special_identifier) @function.builtin)
+
 (call (member key: (identifier) @function.method))
 
 (call (identifier) @function)
@@ -16,8 +18,6 @@
 (parameters (identifier) @variable.parameter)
 
 ; Variables
-
-(module_specifier (identifier) @namespace)
 
 (member key: (identifier) @variable.other.member)
 (identifier) @variable
@@ -47,12 +47,6 @@
  "else"
  "switch"
 ] @keyword.control.conditional
-
-[
- "module"
- "import"
- "pub"
-] @keyword.control.import
 
 [
  (break)

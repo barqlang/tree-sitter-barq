@@ -47,7 +47,10 @@
   "tree-sitter": [
     {
       "scope": "source.barq",
-      "injection-regex": "^barq$"
+      "file-types": [
+        "bq"
+      ],
+      "highlights": "queries/nvim/highlights.scm"
     }
   ]
 }

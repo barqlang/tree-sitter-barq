@@ -40,10 +40,7 @@ module.exports = grammar({
 
         _top_level: ($) =>
             choice(
-                seq($.module_specifier, ";"),
-                seq($.import, ";"),
                 $.global_assembly,
-                $.public,
                 seq($.constant, ";"),
                 $.variable,
                 seq($.extern_variable, ";"),
@@ -66,23 +63,6 @@ module.exports = grammar({
                 seq($._expression, ";"),
             ),
 
-        module_specifier: ($) => seq("module", $.identifier),
-
-        public: ($) =>
-            seq(
-                "pub",
-                choice(
-                    seq($.constant, ";"),
-                    $.variable,
-                    seq($.extern_variable, ";"),
-                    $.function,
-                    seq($.extern_function, ";"),
-                    seq($.type_alias, ";"),
-                ),
-            ),
-
-        import: ($) => seq("import", $.string),
-
         constant: ($) => seq("const", $.identifier, "=", $._expression),
 
         variable: ($) =>
@@ -90,8 +70,10 @@ module.exports = grammar({
                 optional("export"),
                 "var",
                 $.identifier,
-                optional($.type),
-                choice(";", seq("=", $._expression, ";")),
+                choice(
+                    seq($.type, ";"),
+                    seq(optional($.type), "=", $._expression, ";"),
+                ),
             ),
 
         extern_variable: ($) => seq("extern", $.identifier, $.type),
@@ -128,7 +110,7 @@ module.exports = grammar({
 
         body: ($) => seq("{", repeat($._statement), "}"),
 
-        switch: ($) => seq("switch", "(", $._expression, ")", $.switch_cases),
+        switch: ($) => seq("switch", $._expression, $.switch_cases),
 
         switch_cases: ($) =>
             seq(
@@ -168,6 +150,7 @@ module.exports = grammar({
         _unary_expression: ($) =>
             choice(
                 $.identifier,
+                $.special_identifier,
                 $.string,
                 $.character,
                 $.int,
@@ -178,6 +161,8 @@ module.exports = grammar({
             ),
 
         identifier: (_) => token(/[_a-zA-Z][:_a-zA-Z0-9]*/),
+
+        special_identifier: (_) => token(/@[_a-zA-Z][:_a-zA-Z0-9]*/),
 
         type: ($) =>
             choice(

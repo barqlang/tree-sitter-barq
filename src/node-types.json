@@ -52,6 +52,10 @@
           "named": true
         },
         {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -188,6 +192,10 @@
             "named": true
           },
           {
+            "type": "special_identifier",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -247,6 +255,10 @@
           },
           {
             "type": "parentheses_expression",
+            "named": true
+          },
+          {
+            "type": "special_identifier",
             "named": true
           },
           {
@@ -315,6 +327,10 @@
           },
           {
             "type": "parentheses_expression",
+            "named": true
+          },
+          {
+            "type": "special_identifier",
             "named": true
           },
           {
@@ -450,6 +466,10 @@
             "named": true
           },
           {
+            "type": "special_identifier",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -542,6 +562,10 @@
           "named": true
         },
         {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -625,6 +649,10 @@
           "named": true
         },
         {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -689,6 +717,10 @@
         },
         {
           "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -765,6 +797,10 @@
         },
         {
           "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -860,6 +896,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -1123,6 +1163,10 @@
           "named": true
         },
         {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1132,21 +1176,6 @@
         },
         {
           "type": "unary_operation",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "import",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -1217,6 +1246,10 @@
         },
         {
           "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -1305,6 +1338,10 @@
             "named": true
           },
           {
+            "type": "special_identifier",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -1349,38 +1386,11 @@
           "named": true
         },
         {
-          "type": "import",
-          "named": true
-        },
-        {
-          "type": "module_specifier",
-          "named": true
-        },
-        {
-          "type": "public",
-          "named": true
-        },
-        {
           "type": "type_alias",
           "named": true
         },
         {
           "type": "variable",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "module_specifier",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -1458,6 +1468,10 @@
           "named": true
         },
         {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1482,41 +1496,6 @@
       "types": [
         {
           "type": "type",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "public",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "constant",
-          "named": true
-        },
-        {
-          "type": "extern_function",
-          "named": true
-        },
-        {
-          "type": "extern_variable",
-          "named": true
-        },
-        {
-          "type": "function",
-          "named": true
-        },
-        {
-          "type": "type_alias",
-          "named": true
-        },
-        {
-          "type": "variable",
           "named": true
         }
       ]
@@ -1572,6 +1551,10 @@
         },
         {
           "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -1688,6 +1671,10 @@
             "named": true
           },
           {
+            "type": "special_identifier",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -1747,6 +1734,10 @@
           },
           {
             "type": "parentheses_expression",
+            "named": true
+          },
+          {
+            "type": "special_identifier",
             "named": true
           },
           {
@@ -1815,6 +1806,10 @@
         },
         {
           "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -1914,6 +1909,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -2046,6 +2045,10 @@
             "named": true
           },
           {
+            "type": "special_identifier",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -2136,6 +2139,10 @@
           "named": true
         },
         {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -2208,6 +2215,10 @@
         },
         {
           "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
           "named": true
         },
         {
@@ -2442,24 +2453,16 @@
     "named": false
   },
   {
-    "type": "import",
-    "named": false
-  },
-  {
     "type": "int",
     "named": true
   },
   {
-    "type": "module",
-    "named": false
-  },
-  {
-    "type": "pub",
-    "named": false
-  },
-  {
     "type": "return",
     "named": false
+  },
+  {
+    "type": "special_identifier",
+    "named": true
   },
   {
     "type": "struct",
