@@ -160,9 +160,9 @@ module.exports = grammar({
                 $.unary_operation,
             ),
 
-        identifier: (_) => token(/[_a-zA-Z][:_a-zA-Z0-9]*/),
+        identifier: (_) => token(/[_a-zA-Z][_a-zA-Z0-9]*/),
 
-        special_identifier: (_) => token(/@[_a-zA-Z][:_a-zA-Z0-9]*/),
+        special_identifier: (_) => token(/@[_a-zA-Z][_a-zA-Z0-9]*/),
 
         type: ($) =>
             choice(
