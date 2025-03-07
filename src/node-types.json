@@ -8,6 +8,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -28,7 +32,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -52,11 +64,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -79,11 +99,87 @@
       "required": true,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "assign",
+          "named": true
+        },
+        {
+          "type": "binary_operation",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "character",
+          "named": true
+        },
+        {
+          "type": "enum_type",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "inline_assembly",
+          "named": true
+        },
+        {
           "type": "int",
           "named": true
         },
         {
-          "type": "type",
+          "type": "member",
+          "named": true
+        },
+        {
+          "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "type_right",
+          "named": true
+        },
+        {
+          "type": "unary_operation",
           "named": true
         }
       ]
@@ -148,6 +244,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "assign",
             "named": true
           },
@@ -168,7 +268,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -192,11 +300,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -214,6 +330,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "assign",
             "named": true
           },
@@ -234,7 +354,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -258,11 +386,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -286,6 +422,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "assign",
             "named": true
           },
@@ -306,7 +446,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -330,11 +478,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -422,6 +578,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "assign",
             "named": true
           },
@@ -442,7 +602,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -466,11 +634,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -493,6 +669,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
         {
           "type": "assign",
           "named": true
@@ -530,7 +710,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -558,6 +746,10 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -567,6 +759,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -605,6 +801,10 @@
           "named": true
         },
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -625,7 +825,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -649,11 +857,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -676,6 +892,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -696,7 +916,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -720,11 +948,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -756,6 +992,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -776,7 +1016,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -800,11 +1048,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -826,6 +1082,10 @@
       "multiple": false,
       "required": false,
       "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
         {
           "type": "assign",
           "named": true
@@ -867,7 +1127,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -895,6 +1163,10 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -904,6 +1176,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -975,49 +1251,15 @@
     }
   },
   {
-    "type": "extern_function",
-    "named": true,
-    "fields": {
-      "return_type": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "type",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "parameters",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "extern_variable",
+    "type": "foreign_attribute",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "type",
+          "type": "string",
           "named": true
         }
       ]
@@ -1047,7 +1289,7 @@
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "foreign_attribute",
           "named": true
         },
         {
@@ -1115,6 +1357,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -1139,7 +1385,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1163,11 +1417,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -1205,6 +1467,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -1225,7 +1491,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1249,6 +1523,10 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -1257,11 +1535,11 @@
           "named": true
         },
         {
-          "type": "subscript",
+          "type": "struct_type",
           "named": true
         },
         {
-          "type": "type",
+          "type": "subscript",
           "named": true
         },
         {
@@ -1294,6 +1572,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "assign",
             "named": true
           },
@@ -1314,7 +1596,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -1338,11 +1628,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -1370,23 +1668,7 @@
           "named": true
         },
         {
-          "type": "extern_function",
-          "named": true
-        },
-        {
-          "type": "extern_variable",
-          "named": true
-        },
-        {
-          "type": "function",
-          "named": true
-        },
-        {
           "type": "global_assembly",
-          "named": true
-        },
-        {
-          "type": "type_alias",
           "named": true
         },
         {
@@ -1424,6 +1706,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -1444,7 +1730,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1468,11 +1762,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -1495,7 +1797,7 @@
       "required": true,
       "types": [
         {
-          "type": "type",
+          "type": "type_right",
           "named": true
         }
       ]
@@ -1509,6 +1811,10 @@
       "multiple": false,
       "required": false,
       "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
         {
           "type": "assign",
           "named": true
@@ -1530,7 +1836,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1554,11 +1868,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -1627,6 +1949,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "assign",
             "named": true
           },
@@ -1647,7 +1973,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -1671,11 +2005,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -1693,6 +2035,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "assign",
             "named": true
           },
@@ -1713,7 +2059,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -1737,11 +2091,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -1765,6 +2127,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -1785,7 +2151,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1809,11 +2183,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -1839,6 +2221,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
         {
           "type": "assign",
           "named": true
@@ -1880,7 +2266,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1908,6 +2302,10 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -1917,6 +2315,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -1948,10 +2350,30 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "assign",
+          "named": true
+        },
+        {
+          "type": "binary_operation",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "character",
           "named": true
         },
         {
@@ -1959,7 +2381,31 @@
           "named": true
         },
         {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "inline_assembly",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "member",
+          "named": true
+        },
+        {
+          "type": "parentheses_expression",
           "named": true
         },
         {
@@ -1967,26 +2413,114 @@
           "named": true
         },
         {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "struct_type",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "unary_operation",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "type_alias",
+    "type": "type_right",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "assign",
+          "named": true
+        },
+        {
+          "type": "binary_operation",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "character",
+          "named": true
+        },
+        {
+          "type": "enum_type",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
         },
         {
-          "type": "type",
+          "type": "inline_assembly",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "member",
+          "named": true
+        },
+        {
+          "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "unary_operation",
           "named": true
         }
       ]
@@ -2000,6 +2534,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
           {
             "type": "assign",
             "named": true
@@ -2021,7 +2559,15 @@
             "named": true
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
             "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
             "named": true
           },
           {
@@ -2045,11 +2591,19 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           },
           {
@@ -2095,6 +2649,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -2115,7 +2673,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -2139,11 +2705,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -2170,6 +2744,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_type",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -2194,7 +2772,15 @@
           "named": true
         },
         {
+          "type": "enum_type",
+          "named": true
+        },
+        {
           "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -2218,11 +2804,19 @@
           "named": true
         },
         {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
           "named": true
         },
         {
@@ -2325,6 +2919,14 @@
     "named": false
   },
   {
+    "type": "::",
+    "named": false
+  },
+  {
+    "type": ":=",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
@@ -2370,6 +2972,10 @@
   },
   {
     "type": ">>=",
+    "named": false
+  },
+  {
+    "type": "@foreign",
     "named": false
   },
   {
@@ -2429,14 +3035,6 @@
     "named": false
   },
   {
-    "type": "export",
-    "named": false
-  },
-  {
-    "type": "extern",
-    "named": false
-  },
-  {
     "type": "float",
     "named": true
   },
@@ -2470,14 +3068,6 @@
   },
   {
     "type": "switch",
-    "named": false
-  },
-  {
-    "type": "type",
-    "named": false
-  },
-  {
-    "type": "var",
     "named": false
   },
   {

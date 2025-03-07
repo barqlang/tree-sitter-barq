@@ -39,15 +39,7 @@ module.exports = grammar({
         module: ($) => repeat($._top_level),
 
         _top_level: ($) =>
-            choice(
-                $.global_assembly,
-                seq($.constant, ";"),
-                $.variable,
-                seq($.extern_variable, ";"),
-                $.function,
-                seq($.extern_function, ";"),
-                seq($.type_alias, ";"),
-            ),
+            choice($.global_assembly, seq($.constant, ";"), $.variable),
 
         _statement: ($) =>
             choice(
@@ -63,49 +55,16 @@ module.exports = grammar({
                 seq($._expression, ";"),
             ),
 
-        constant: ($) => seq("const", $.identifier, "=", $._expression),
+        constant: ($) => seq($.identifier, "::", $._expression),
 
         variable: ($) =>
             seq(
-                optional("export"),
-                "var",
                 $.identifier,
                 choice(
-                    seq($.type, ";"),
-                    seq(optional($.type), "=", $._expression, ";"),
+                    seq(":", $.type, ";"),
+                    seq(":", $.type, "=", $._expression, ";"),
+                    seq(":=", $._expression, ";"),
                 ),
-            ),
-
-        extern_variable: ($) => seq("extern", $.identifier, $.type),
-
-        type_alias: ($) => seq("type", $.identifier, "=", $.type),
-
-        function: ($) =>
-            seq(
-                optional("export"),
-                "fn",
-                $.identifier,
-                $.parameters,
-                optional(field("return_type", $.type)),
-                $.body,
-            ),
-
-        extern_function: ($) =>
-            seq(
-                "extern",
-                "fn",
-                $.identifier,
-                $.parameters,
-                optional(field("return_type", $.type)),
-            ),
-
-        parameters: ($) =>
-            seq(
-                "(",
-                optional(commaSeparated(seq($.identifier, $.type))),
-                optional(","),
-                optional("..."),
-                ")",
             ),
 
         body: ($) => seq("{", repeat($._statement), "}"),
@@ -145,6 +104,9 @@ module.exports = grammar({
 
         return: ($) => seq("return", choice(seq($._expression, ";"), ";")),
 
+        type: ($) => prec.left($._expression),
+        type_right: ($) => prec.right($._expression),
+
         _expression: ($) => choice($._unary_expression, $._binary_expression),
 
         _unary_expression: ($) =>
@@ -155,6 +117,11 @@ module.exports = grammar({
                 $.character,
                 $.int,
                 $.float,
+                $.struct_type,
+                $.enum_type,
+                $.array_type,
+                $.pointer_type,
+                $.function,
                 $.inline_assembly,
                 $.parentheses_expression,
                 $.unary_operation,
@@ -164,22 +131,15 @@ module.exports = grammar({
 
         special_identifier: (_) => token(/@[_a-zA-Z][_a-zA-Z0-9]*/),
 
-        type: ($) =>
-            choice(
-                $.identifier,
-                $.struct_type,
-                $.enum_type,
-                $.array_type,
-                $.pointer_type,
-            ),
-
         struct_type: ($) => seq("struct", $.struct_type_fields),
 
         struct_type_fields: ($) =>
             seq(
                 "{",
                 optional(
-                    commaSeparated(seq(field("key", $.identifier), $.type)),
+                    commaSeparated(
+                        seq(field("key", $.identifier), ":", $.type),
+                    ),
                 ),
                 optional(","),
                 "}",
@@ -202,9 +162,35 @@ module.exports = grammar({
                 "}",
             ),
 
-        array_type: ($) => seq("[", $.int, "]", $.type),
+        array_type: ($) => seq("[", $._expression, "]", $.type_right),
 
-        pointer_type: ($) => seq(choice("*", "[*]"), optional("const"), $.type),
+        pointer_type: ($) =>
+            seq(choice("*", "[*]"), optional("const"), $.type_right),
+
+        function: ($) =>
+            prec.left(
+                seq(
+                    "fn",
+                    $.parameters,
+                    optional(field("return_type", $.type)),
+                    optional(choice(
+                        $.foreign_attribute,
+                        $.body,
+                        seq($.foreign_attribute, $.body),
+                    )),
+                ),
+            ),
+
+        foreign_attribute: ($) => seq("@foreign", "(", $.string, ")"),
+
+        parameters: ($) =>
+            seq(
+                "(",
+                optional(commaSeparated(seq($.identifier, ":", $.type))),
+                optional(","),
+                optional("..."),
+                ")",
+            ),
 
         string: (_) =>
             seq('"', field("content", /[^"\\]*(?:\\.[^"\\]*)*/), '"'),
@@ -229,7 +215,7 @@ module.exports = grammar({
                 optional(
                     seq(
                         ":",
-                        optional(seq($.string, "(", $.type, ")")),
+                        optional(seq($.string, "(", $._expression, ")")),
                         optional(
                             seq(
                                 ":",
