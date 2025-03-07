@@ -68,6 +68,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -156,6 +160,10 @@
         },
         {
           "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
           "named": true
         },
         {
@@ -304,6 +312,10 @@
             "named": true
           },
           {
+            "type": "slice_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
@@ -387,6 +399,10 @@
           },
           {
             "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
             "named": true
           },
           {
@@ -479,6 +495,10 @@
           },
           {
             "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
             "named": true
           },
           {
@@ -638,6 +658,10 @@
             "named": true
           },
           {
+            "type": "slice_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
@@ -754,6 +778,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -861,6 +889,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -949,6 +981,10 @@
         },
         {
           "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
           "named": true
         },
         {
@@ -1049,6 +1085,10 @@
         },
         {
           "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
           "named": true
         },
         {
@@ -1168,6 +1208,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "slice_type",
           "named": true
         },
         {
@@ -1421,6 +1465,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -1527,6 +1575,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -1629,6 +1681,10 @@
           },
           {
             "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
             "named": true
           },
           {
@@ -1766,6 +1822,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -1872,6 +1932,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -1889,6 +1953,21 @@
         },
         {
           "type": "unary_operation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "slice_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "type_right",
           "named": true
         }
       ]
@@ -2009,6 +2088,10 @@
             "named": true
           },
           {
+            "type": "slice_type",
+            "named": true
+          },
+          {
             "type": "special_identifier",
             "named": true
           },
@@ -2092,6 +2175,10 @@
           },
           {
             "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
             "named": true
           },
           {
@@ -2184,6 +2271,10 @@
         },
         {
           "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
           "named": true
         },
         {
@@ -2310,6 +2401,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -2413,6 +2508,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -2504,6 +2603,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -2592,6 +2695,10 @@
           },
           {
             "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
             "named": true
           },
           {
@@ -2709,6 +2816,10 @@
           "named": true
         },
         {
+          "type": "slice_type",
+          "named": true
+        },
+        {
           "type": "special_identifier",
           "named": true
         },
@@ -2805,6 +2916,10 @@
         },
         {
           "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
           "named": true
         },
         {
@@ -2984,6 +3099,10 @@
   },
   {
     "type": "[*]",
+    "named": false
+  },
+  {
+    "type": "[]",
     "named": false
   },
   {

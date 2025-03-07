@@ -120,6 +120,7 @@ module.exports = grammar({
                 $.struct_type,
                 $.enum_type,
                 $.array_type,
+                $.slice_type,
                 $.pointer_type,
                 $.function,
                 $.inline_assembly,
@@ -163,6 +164,9 @@ module.exports = grammar({
             ),
 
         array_type: ($) => seq("[", $._expression, "]", $.type_right),
+
+        slice_type: ($) =>
+            seq(choice("[]"), optional("const"), $.type_right),
 
         pointer_type: ($) =>
             seq(choice("*", "[*]"), optional("const"), $.type_right),
