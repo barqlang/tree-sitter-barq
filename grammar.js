@@ -35,6 +35,11 @@ module.exports = grammar({
 
     word: ($) => $.identifier,
 
+    conflicts: ($) => [
+        [$._unary_expression, $.attribute],
+        [$._unary_expression, $._statement],
+    ],
+
     rules: {
         module: ($) => repeat($._top_level),
 
@@ -45,14 +50,35 @@ module.exports = grammar({
             choice(
                 seq($.constant, ";"),
                 $.variable,
-                $.switch,
-                $.if,
                 $.while,
                 seq($.break, ";"),
                 seq($.continue, ";"),
                 $.defer,
                 $.return,
-                seq($._expression, ";"),
+                seq(
+                    choice(
+                        $.identifier,
+                        $.special_identifier,
+                        $.string,
+                        $.character,
+                        $.int,
+                        $.float,
+                        $.array_type,
+                        $.slice_type,
+                        $.pointer_type,
+                        $.parentheses_expression,
+                        $.unary_operation,
+                        $._binary_expression,
+                    ),
+                    ";",
+                ),
+                $.struct_type,
+                $.enum_type,
+                $.switch,
+                $.if,
+                $.function,
+                $.inline_assembly,
+                ";",
             ),
 
         constant: ($) => seq($.identifier, "::", $._expression),
@@ -68,33 +94,6 @@ module.exports = grammar({
             ),
 
         body: ($) => seq("{", repeat($._statement), "}"),
-
-        switch: ($) => seq("switch", $._expression, $.switch_cases),
-
-        switch_cases: ($) =>
-            seq(
-                "{",
-                commaSeparated(
-                    seq(
-                        choice(
-                            "else",
-                            seq(commaSeparated($._expression), optional(",")),
-                        ),
-                        "=>",
-                        choice($.body, $._statement),
-                    ),
-                ),
-                optional(","),
-                "}",
-            ),
-
-        if: ($) =>
-            seq(
-                "if",
-                $._expression,
-                $.body,
-                field("fallback", optional(seq("else", choice($.if, $.body)))),
-            ),
 
         while: ($) => seq("while", $._expression, $.body),
         break: (_) => "break",
@@ -122,6 +121,8 @@ module.exports = grammar({
                 $.array_type,
                 $.slice_type,
                 $.pointer_type,
+                $.switch,
+                $.if,
                 $.function,
                 $.inline_assembly,
                 $.parentheses_expression,
@@ -165,27 +166,76 @@ module.exports = grammar({
 
         array_type: ($) => seq("[", $._expression, "]", $.type_right),
 
-        slice_type: ($) =>
-            seq(choice("[]"), optional("const"), $.type_right),
+        slice_type: ($) => seq(choice("[]"), optional("const"), $.type_right),
 
         pointer_type: ($) =>
             seq(choice("*", "[*]"), optional("const"), $.type_right),
+
+        switch: ($) => seq("switch", $._expression, $.switch_cases),
+
+        switch_cases: ($) =>
+            seq(
+                "{",
+                commaSeparated(
+                    seq(
+                        choice(
+                            "else",
+                            seq(commaSeparated($._expression), optional(",")),
+                        ),
+                        "=>",
+                        choice($.body, $._expression),
+                    ),
+                ),
+                optional(","),
+                "}",
+            ),
+
+        if: ($) =>
+            prec.left(
+                seq(
+                    "if",
+                    $._expression,
+                    choice($.body, seq("then", $._expression)),
+                    field(
+                        "fallback",
+                        optional(seq("else", choice($.body, $._expression))),
+                    ),
+                ),
+            ),
 
         function: ($) =>
             prec.left(
                 seq(
                     "fn",
                     $.parameters,
-                    optional(field("return_type", $.type)),
-                    optional(choice(
-                        $.foreign_attribute,
+                    choice(
+                        $.attributes,
                         $.body,
-                        seq($.foreign_attribute, $.body),
-                    )),
+                        seq($.attributes, $.body),
+                        field("return_type", $.type_right),
+                        seq(field("return_type", $.type_right), $.attributes),
+                        seq(field("return_type", $.type_right), $.body),
+                        seq(
+                            field("return_type", $.type_right),
+                            $.attributes,
+                            $.body,
+                        ),
+                    ),
                 ),
             ),
 
-        foreign_attribute: ($) => seq("@foreign", "(", $.string, ")"),
+        attributes: ($) => prec.right(seq($.attribute, repeat($.attribute))),
+
+        attribute: ($) =>
+            prec.right(
+                choice(
+                    $.special_identifier,
+                    seq(
+                        $.special_identifier,
+                        seq("(", commaSeparated($._expression), ")"),
+                    ),
+                ),
+            ),
 
         parameters: ($) =>
             seq(

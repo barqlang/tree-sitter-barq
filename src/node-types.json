@@ -48,6 +48,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -85,6 +89,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -143,6 +151,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -180,6 +192,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -292,6 +308,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -329,6 +349,10 @@
           },
           {
             "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": true
           },
           {
@@ -382,6 +406,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -422,11 +450,133 @@
             "named": true
           },
           {
+            "type": "switch",
+            "named": true
+          },
+          {
             "type": "unary_operation",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "attribute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "assign",
+          "named": true
+        },
+        {
+          "type": "binary_operation",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "character",
+          "named": true
+        },
+        {
+          "type": "enum_type",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "inline_assembly",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "member",
+          "named": true
+        },
+        {
+          "type": "parentheses_expression",
+          "named": true
+        },
+        {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
+          "named": true
+        },
+        {
+          "type": "special_identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_type",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
+          "named": true
+        },
+        {
+          "type": "unary_operation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attributes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -478,6 +628,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -515,6 +669,10 @@
           },
           {
             "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": true
           },
           {
@@ -638,6 +796,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -675,6 +837,10 @@
           },
           {
             "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": true
           },
           {
@@ -869,6 +1035,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -906,6 +1076,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -964,6 +1138,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -1001,6 +1179,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -1068,6 +1250,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -1105,6 +1291,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -1295,21 +1485,6 @@
     }
   },
   {
-    "type": "foreign_attribute",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "function",
     "named": true,
     "fields": {
@@ -1318,7 +1493,7 @@
         "required": false,
         "types": [
           {
-            "type": "type",
+            "type": "type_right",
             "named": true
           }
         ]
@@ -1329,11 +1504,11 @@
       "required": true,
       "types": [
         {
-          "type": "body",
+          "type": "attributes",
           "named": true
         },
         {
-          "type": "foreign_attribute",
+          "type": "body",
           "named": true
         },
         {
@@ -1382,7 +1557,31 @@
         "required": false,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "assign",
+            "named": true
+          },
+          {
+            "type": "binary_operation",
+            "named": true
+          },
+          {
             "type": "body",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "character",
             "named": true
           },
           {
@@ -1390,7 +1589,71 @@
             "named": false
           },
           {
+            "type": "enum_type",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_assembly",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "member",
+            "named": true
+          },
+          {
+            "type": "parentheses_expression",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
+            "named": true
+          },
+          {
+            "type": "special_identifier",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
+            "named": true
+          },
+          {
+            "type": "unary_operation",
             "named": true
           }
         ]
@@ -1445,6 +1708,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -1482,6 +1749,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -1555,6 +1826,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -1592,6 +1867,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -1664,6 +1943,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -1701,6 +1984,10 @@
           },
           {
             "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": true
           },
           {
@@ -1802,6 +2089,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -1839,6 +2130,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -1912,6 +2207,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -1949,6 +2248,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -2068,6 +2371,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -2105,6 +2412,10 @@
           },
           {
             "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": true
           },
           {
@@ -2158,6 +2469,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -2195,6 +2510,10 @@
           },
           {
             "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": true
           },
           {
@@ -2254,6 +2573,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -2294,6 +2617,10 @@
           "named": true
         },
         {
+          "type": "switch",
+          "named": true
+        },
+        {
           "type": "switch_cases",
           "named": true
         },
@@ -2310,7 +2637,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "array_type",
@@ -2329,10 +2656,6 @@
           "named": true
         },
         {
-          "type": "break",
-          "named": true
-        },
-        {
           "type": "call",
           "named": true
         },
@@ -2342,18 +2665,6 @@
         },
         {
           "type": "character",
-          "named": true
-        },
-        {
-          "type": "constant",
-          "named": true
-        },
-        {
-          "type": "continue",
-          "named": true
-        },
-        {
-          "type": "defer",
           "named": true
         },
         {
@@ -2397,10 +2708,6 @@
           "named": true
         },
         {
-          "type": "return",
-          "named": true
-        },
-        {
           "type": "slice_type",
           "named": true
         },
@@ -2426,14 +2733,6 @@
         },
         {
           "type": "unary_operation",
-          "named": true
-        },
-        {
-          "type": "variable",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -2488,6 +2787,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -2525,6 +2828,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -2583,6 +2890,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -2620,6 +2931,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -2678,6 +2993,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_assembly",
             "named": true
           },
@@ -2715,6 +3034,10 @@
           },
           {
             "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "switch",
             "named": true
           },
           {
@@ -2796,6 +3119,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -2833,6 +3160,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -2899,6 +3230,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_assembly",
           "named": true
         },
@@ -2936,6 +3271,10 @@
         },
         {
           "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "switch",
           "named": true
         },
         {
@@ -3090,10 +3429,6 @@
     "named": false
   },
   {
-    "type": "@foreign",
-    "named": false
-  },
-  {
     "type": "[",
     "named": false
   },
@@ -3187,6 +3522,10 @@
   },
   {
     "type": "switch",
+    "named": false
+  },
+  {
+    "type": "then",
     "named": false
   },
   {

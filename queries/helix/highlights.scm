@@ -17,6 +17,10 @@
 
 (parameters (identifier) @variable.parameter)
 
+; Attributes
+
+(attribute (special_identifier) @attribute)
+
 ; Variables
 
 (member key: (identifier) @variable.other.member)
@@ -46,6 +50,7 @@
  "if"
  "else"
  "switch"
+  "then"
 ] @keyword.control.conditional
 
 [
@@ -64,8 +69,6 @@
 "const" @keyword.storage.modifier
 
 "asm" @keyword
-
-"@foreign" @attribute
 
 ; Operators
 
